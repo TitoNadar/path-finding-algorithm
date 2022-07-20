@@ -14,6 +14,7 @@
     "web-vitals": "^2.1.4",
     "gh-pages": "^3.1.0"
   },
+  "homepage": "https://titonadar.github.io/path-finding-algorithm/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

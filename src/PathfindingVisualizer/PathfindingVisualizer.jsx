@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import Node from "./Node/Node.jsx";
-import {showPopUp} from "./Tutorial/Tutorial.jsx";
 
 import { dijkstra, getNodesInShortestPathOrder } from "../algorithms/dijkstras";
 
@@ -23,7 +22,7 @@ export default class PathfindingVisualizer extends Component {
     this.state = {
       grid: [],
       mouseIsPressed: false,
-      topMessage: "Dijkstra Algorithm",
+      topMessage: "Dijkstra's Algorithm",
       weight: 1,
       changeWeight: false,
       distanceToBeTraveled: 0,
@@ -214,7 +213,7 @@ export default class PathfindingVisualizer extends Component {
     } = this.state;
     let button_task = (
       <p className="btn" onClick={() => this.visualizeDijkstra()}>
-        Start Dijkstra Algorithm
+        Visualize
       </p>
     );
 
@@ -240,22 +239,6 @@ export default class PathfindingVisualizer extends Component {
 
     let textBox = (
       <div className="textBox">
-        <div className="weightContainer">
-          <label htmlFor="quantity">Toggle or Set Weight </label>
-
-          <input
-            type="number"
-            id="quantity"
-            name="quantity"
-            min="1"
-            max="5"
-            onChange={this.weightChangeHandler}
-            defaultValue="1"
-          />
-
-          <button onClick={this.toggleWeight}>{changeWeightText}</button>
-        </div>
-
         <div className="startPointContainer">
           <label htmlFor="point">Start Point :</label>
           <input
@@ -321,15 +304,12 @@ export default class PathfindingVisualizer extends Component {
       <div className="pathfindingVisualizer">
         <div className="container">
           <div className="heading">
-            <h2 onClick={showPopUp}>Search Visualizer</h2>
+            <h2>Shortest Path Finding Visualizer</h2>
             <h2>{topMessage}</h2>
           </div>
-
-          {/* Show the header */}
           {textBox}
-
           <p>
-            Dijkstra's Algorithm is weighted and guarantees the shortest path!{" "}
+            Dijkstra's Algorithm  guarantees the shortest path for non-negative weighted paths!
             <span className="ref"></span>
           </p>
         </div>
